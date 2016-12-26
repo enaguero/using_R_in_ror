@@ -1,0 +1,36 @@
+<%= form_for flower, remote: true do |f| %>
+
+  <% if flower.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(flower.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <ul>
+      <% flower.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sepal_length %>
+    <%= f.number_field :sepal_length %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sepal_width %>
+    <%= f.number_field :sepal_width %>
+  </div>
+
+  <div class="field">
+    <%= f.label :petal_length %>
+    <%= f.number_field :petal_length %>
+  </div>
+
+  <div class="field">
+    <%= f.label :petal_width %>
+    <%= f.number_field :petal_width %>
+  </div>
+
+
+  <%= f.submit %>
+<% end %>

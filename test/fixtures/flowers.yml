@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sepal_length: 1.5
+  sepal_width: 1.5
+  petal_length: 1.5
+  petal_width: 1.5
+  species: one
+
+two:
+  sepal_length: 1.5
+  sepal_width: 1.5
+  petal_length: 1.5
+  petal_width: 1.5
+  species: two
