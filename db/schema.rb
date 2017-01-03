@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20161225235203) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "flowers", force: :cascade do |t|
     t.float    "sepal_length"
     t.float    "sepal_width"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20161225235203) do
     t.integer  "species_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["species_id"], name: "index_flowers_on_species_id"
+    t.index ["species_id"], name: "index_flowers_on_species_id", using: :btree
   end
 
   create_table "predictions", force: :cascade do |t|
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 20161225235203) do
     t.integer  "flower_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["flower_id"], name: "index_predictions_on_flower_id"
+    t.index ["flower_id"], name: "index_predictions_on_flower_id", using: :btree
   end
 
   create_table "species", force: :cascade do |t|
@@ -37,4 +40,6 @@ ActiveRecord::Schema.define(version: 20161225235203) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "flowers", "species"
+  add_foreign_key "predictions", "flowers"
 end
