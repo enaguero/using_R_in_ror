@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20170108061259) do
     t.float    "petal_length"
     t.float    "petal_width"
     t.integer  "species_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "state"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "state",        default: "new"
     t.index ["species_id"], name: "index_flowers_on_species_id", using: :btree
   end
 

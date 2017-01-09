@@ -7,7 +7,8 @@ class FlowersLoader < CsvLoader
     @readed_data.each do |flower_data|
       #TODO:Incorporate transaction
       species = Species.find_by_name(flower_data[4])
-      Flower.create!(sepal_length:flower_data[0],sepal_width:flower_data[1],petal_length:flower_data[2],petal_width:flower_data[3])
+      flower = Flower.create!(sepal_length:flower_data[0],sepal_width:flower_data[1],petal_length:flower_data[2],petal_width:flower_data[3])
+      flower.set_initial_data
     end
   end
 end

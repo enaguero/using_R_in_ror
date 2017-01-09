@@ -1,0 +1,16 @@
+<h1> Flower Data</h1>
+
+<table id='flower-data'>
+  <tr>
+    <th>Id</th>
+    <th>Sepal Length</th>
+    <th>Sepal Width</th>
+    <th>Petal Length</th>
+    <th>Sepal Width</th>
+    <th>Species</th>
+    <th>Type of Information</th>
+  </tr>
+  <% @flowers.each do |flower| %>
+   <%= render partial:'flower_details', locals:{flower:flower} %>
+  <%end%>
+</table>

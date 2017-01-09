@@ -1,11 +1,15 @@
 class FlowersController < ApplicationController
+  def index
+    @flowers = Flower.all.order(created_at: :desc)
+  end
+
   def create
 
     @flower = Flower.new(flower_params)
 
     respond_to do |format|
       if @flower.save
-        format.html {redirect_to predictions_path}
+        format.html {redirect_to flowers_path}
       else
         format.js {}
       end

@@ -1,0 +1,9 @@
+<tr>
+   <td><%= flower.id %></td>
+   <td><%= flower.sepal_length %></td>
+   <td><%= flower.sepal_width %></td>
+   <td><%= flower.petal_length %></td>
+   <td><%= flower.petal_width %></td>
+   <td><%= flower.try(:species).try(:name) %></td>
+   <td><%= flower.state %></td>
+ </tr>
