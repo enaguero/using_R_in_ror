@@ -16,19 +16,20 @@ install.packages("RPostgreSQL")
 ```
 3. Postgres.
 
-
 ## Data example
 1. [Iris Dataset](https://archive.ics.uci.edu/ml/datasets/Iris). [Csv Version](https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data)
 
 ## Trained model
 I use the model trained by [Jalayer Academy](https://youtu.be/5NquIfQxpxk) I follow the instructions in the tutorial and later I serialized the model in a RSD file.
 
+## Communications between R and Rails
+Using a rake task.
+
 ## Improvements
 1. Use some JsLibrary to create a interactive dashboard.
 2. Add test.
 3. Depend of what is the need, maybe sidekick for background jobs could be a good idea.
 4. Better process to accept new incoming data. For example: detect errors or anomalies.
-5. How to communicate data between R and Rails.
 
 # References
 
